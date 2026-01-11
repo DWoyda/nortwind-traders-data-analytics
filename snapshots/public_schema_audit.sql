@@ -21,6 +21,7 @@ SELECT
     column_name,
     ordinal_position,   -- reflects the defined order of columns in each table
     data_type,
+    udt_name,
     is_nullable,
     column_default
 FROM information_schema."columns"
