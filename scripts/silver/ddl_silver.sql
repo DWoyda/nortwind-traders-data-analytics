@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS silver.categories (
 	category_name     VARCHAR NOT NULL,
 	description       TEXT,
 	picture           BYTEA,
-	dwh_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS silver.customer_customer_demo CASCADE;
 CREATE TABLE IF NOT EXISTS silver.customer_customer_demo (
 	customer_id       CHAR(5) NOT NULL,
 	customer_type_id  CHAR(10) NOT NULL,
-	dwh_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS silver.customer_demographics CASCADE;
 CREATE TABLE IF NOT EXISTS silver.customer_demographics (
 	customer_type_id  CHAR(10) NOT NULL,
 	customer_desc     TEXT,
-	dwh_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS silver.customers (
 	country         VARCHAR,
 	phone           VARCHAR,
 	fax             VARCHAR,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -71,7 +71,7 @@ DROP TABLE IF EXISTS silver.employee_territories CASCADE;
 CREATE TABLE IF NOT EXISTS silver.employee_territories (
 	employee_id     SMALLINT NOT NULL,
 	territory_id    VARCHAR NOT NULL,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS silver.employees (
 	notes             TEXT,
 	reports_to        SMALLINT,
 	photo_path        VARCHAR,
-	dwh_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS silver.order_details (
 	unit_price      REAL NOT NULL,
 	quantity        SMALLINT NOT NULL,
 	discount        REAL NOT NULL,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS silver.orders (
 	ship_region      VARCHAR,
 	ship_postal_code VARCHAR,
 	ship_country     VARCHAR,
-	dwh_create_date  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS silver.products (
 	units_on_order    SMALLINT,
 	reorder_level     SMALLINT,
 	discontinued      INTEGER NOT NULL,
-	dwh_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -165,7 +165,7 @@ DROP TABLE IF EXISTS silver.region CASCADE;
 CREATE TABLE IF NOT EXISTS silver.region (
 	region_id          SMALLINT NOT NULL,
 	region_description CHAR(50) NOT NULL,
-	dwh_create_date    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS silver.shippers (
 	shipper_id      SMALLINT NOT NULL,
 	company_name    VARCHAR NOT NULL,
 	phone           VARCHAR,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS silver.suppliers (
 	phone           VARCHAR,
 	fax             VARCHAR,
 	homepage        TEXT,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS silver.territories (
 	territory_id          VARCHAR NOT NULL,
 	territory_description CHAR(50) NOT NULL,
 	region_id             SMALLINT NOT NULL,
-	dwh_create_date       TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ==========================================================
@@ -223,5 +223,5 @@ CREATE TABLE IF NOT EXISTS silver.us_states (
 	state_name      VARCHAR,
 	state_abbr      VARCHAR,
 	state_region    VARCHAR,
-	dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	user_create_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
