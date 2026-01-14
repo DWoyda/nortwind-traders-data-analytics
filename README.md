@@ -1,2 +1,2 @@
 # nortwind-traders-data-analytics
-a-z project sql&amp;powerbi&amp;python
+|fresh look into sample database |a-z project |sql&amp;powerbi&amp;python|
