@@ -19,11 +19,12 @@ The goal is to showcase an end-to-end analytics workflow: data layering in SQL, 
   <img src="docs/dashboard/dashboard-page2-sales.png" width="49%">
   <img src="docs/dashboard/dashboard-page3-ship.png" width="49%">
 </p>
-[ZDJĘCIE: Power BI model view (star schema) — bi/model-powerbi.png]
+
+[Power BI semantic model — star schema](bi/model-powerbi.png)
 
 Quick links:
-- [LINK: Power BI file (.pbix) — bi/dashboard-sales.pbix]
-- [LINK: Dashboard conclusions / insights — docs/dashboard/dashboard-review.md]
+- [Open the Power BI report (.pbix)](bi/dashboard-sales.pbix)
+- [Dashboard conclusions (business summary)](docs/dashboard/dashboard-review.md)
 
 ---
 
@@ -43,7 +44,7 @@ Quick links:
   Grain: **1 row = 1 order line** (order_id + product_id)
 - **Dimensions:** customers, products (+ categories), employees, shippers, date
 
-[LINK: SQL gold script — scripts/gold/]
+**SQL:** [Gold views (star schema)](scripts/gold/)
 
 ---
 
@@ -59,9 +60,6 @@ Quick links:
 - Ship on Time %  
 - Avg Days to Ship  
 
-(Definitions and page-level interpretation are described in:  
-[LINK: docs/dashboard/dashboard-review.md])
-
 ---
 
 ## How to run (local)
@@ -71,10 +69,10 @@ Quick links:
 - Power BI Desktop
 
 ### Data source
-- Download: [LINK: Northwind .backup source]
+- Download: [database](data/)
 - Restore in pgAdmin4:
   1) Create database `northwind` (or your preferred name)
-  2) Right click the database → **Restore…** → select the `.backup` file
+  2) Right click the database → **Restore…** -> select the `.backup` file
   3) After restore, confirm tables exist in schema `public`
 
 ### Build SILVER and GOLD
@@ -97,16 +95,47 @@ Quick links:
 
 ## Repository structure
 
-
+```text
+├── bi/
+│   ├── dashboard-sales.pbix
+│   └── model-powerbi.png
+├── data/
+│   └── northwind.backup
+├── docs/
+│   ├── dashboard/
+│   │   ├── dashboard-page1-main.png
+│   │   ├── dashboard-page2-sales.png
+│   │   ├── dashboard-page3-ship.png
+│   │   └── dashboard-review.md
+│   ├── 00_quality_checks_business_rules.md
+│   ├── 01_silver_load_business_rules.md
+│   ├── 01_silver_load_how_it_works.md
+│   ├── 02_gold_quality_checks_business_rules.md
+│   └── 02_gold_quality_checks_how_it_works.md
+├── eda/
+│   └── placeholder
+├── scripts/
+│   ├── silver/
+│   │   ├── ddl_silver.sql
+│   │   └── load_silver.sql
+│   └── gold/
+│       └── ddl_gold.sql
+├── tests/
+│   ├── public_schema_audit.sql
+│   ├── silver_quality_checks.sql
+│   └── gold_quality_checks.sql
+├── LICENSE
+└── README.md
+```
 ---
 
 ## Roadmap (planned)
 
-Next step: **Python EDA** to answer “why” questions raised in the dashboard review (drivers of spikes/declines, mix effects, discount effectiveness).  
+Next step: **Python EDA** to answer “why” questions raised in the dashboard review.  
 [LINK: eda/]
 
 ---
 
 ## License
-MIT — see `LICENSE`.
+See [LICENSE](LIENSE)
 
