@@ -1,7 +1,7 @@
 # northwind-traders-data-analytics
 
 Fresh look at the classic **Northwind Traders** dataset (PostgreSQL).  
-Private / portfolio project: **RAW (public) → SILVER → GOLD (star schema views) → Power BI Sales Dashboard (3 pages)**.
+End-to-end analytics project: **RAW (public) → SILVER → GOLD (star schema views) → Power BI Sales Dashboard (3 pages)**.
 
 The goal is to showcase an end-to-end analytics workflow: data layering in SQL, analytics-ready modeling (fact + dimensions), KPI definitions, basic quality checks, and business insights delivered in Power BI.
 
