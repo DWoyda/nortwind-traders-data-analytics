@@ -5,7 +5,7 @@ The dashboard is designed to monitor sales performance over time and identify ke
 
 ---
 
-## Key takeaways (60-second read)
+## Key takeaways
 - Sales are **geographically concentrated**: the highest share comes from the **USA and Germany**, followed by **Austria and Brazil** (Top 5 countries generate a significant portion of total sales).
 - Sales are **product-concentrated**: a small number of products accounts for a substantial share of revenue (Top 5 products clearly dominate the rest).
 - The sales trend over time shows **clear seasonal/monthly fluctuations** and periods of significant change in sales levels (months should be treated as the primary monitoring unit).
