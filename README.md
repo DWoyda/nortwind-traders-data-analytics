@@ -5,6 +5,22 @@ End-to-end analytics project: **RAW (public) → SILVER → GOLD (star schema vi
 
 The goal is to showcase an end-to-end analytics workflow: data layering in SQL, analytics-ready modeling (fact + dimensions), KPI definitions, basic quality checks, and business insights delivered in Power BI.
 
+## Executive summary
+Sales performance is monitored across markets, products, employees, and categories, with a dedicated view on **discount impact** and **shipping reliability**.  
+The dashboard highlights **strong revenue concentration** (a small set of countries/products drives results), a measurable **discount cost**, and generally **stable logistics performance**.  
+Recommended actions focus on **market/product prioritization**
+
+More details (insights + page-level conclusions):  
+- [Dashboard conclusions (business summary)](docs/dashboard/dashboard-review.md)
+
+---
+
+## Business problem 
+A trading company needs a reliable reporting layer to answer:
+- **Where does revenue come from?** (countries, products, employees, categories)
+- **How much do discounts cost?** (gross vs net, discount amount, discount rate)
+- **Does fulfillment support sales?** (on-time shipping, shipping lead time, shipper performance)
+
 ---
 
 ## Dashboard preview (Power BI)
@@ -19,6 +35,18 @@ The goal is to showcase an end-to-end analytics workflow: data layering in SQL, 
   <img src="docs/dashboard/dashboard-page2-sales.png" width="49%">
   <img src="docs/dashboard/dashboard-page3-ship.png" width="49%">
 </p>
+
+## Results & recommendations (high level)
+**Key findings**
+- Sales are **geographically concentrated** (top countries dominate revenue).
+- Sales are **product-concentrated** (top products drive a large share).
+- Discounts reduce revenue: **Discount Rate ≈ 6.5%** of gross sales.
+- Logistics are strong: **Ship on Time ≈ 96%**, avg shipping time **~8 days**.
+
+**Recommended actions**
+- Prioritize commercial execution in **Top 2–3 markets** and protect availability of **top products**.
+- Introduce discount rules (caps/thresholds) and review **high-discount categories** for effectiveness.
+- Monitor fulfillment KPIs as SLA signals: **on-time %** + **avg days to ship**, with shipper comparisons.
 
 [Power BI semantic model — star schema](bi/model-powerbi.png)
 
@@ -44,7 +72,7 @@ Quick links:
   Grain: **1 row = 1 order line** (order_id + product_id)
 - **Dimensions:** customers, products (+ categories), employees, shippers, date
 
-**SQL:** [Gold views (star schema)](scripts/gold/)
+**SQL (GOLD semantic layer):** [scripts/gold/](scripts/gold/)
 
 ---
 
@@ -59,6 +87,8 @@ Quick links:
 - Avg Order Value (AOV)  
 - Ship on Time %  
 - Avg Days to Ship  
+
+KPI interpretations and business conclusions: [docs/dashboard/dashboard-review.md](docs/dashboard/dashboard-review.md)
 
 ---
 
