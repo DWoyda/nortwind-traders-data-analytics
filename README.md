@@ -48,7 +48,7 @@ Quick links:
 
 ---
 
-## Key KPIs (examples)
+## Key KPIs
 
 - Total Sales (Net)  
 - Total Sales (Gross / pre-discount)  
